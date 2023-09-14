@@ -1,21 +1,11 @@
 uses
   Horse,
-  NFseController1, // Adicione as units dos controllers aqui
-  NFseController2,
-  NFseController3;
+  nfse_controller; // Adicione as units dos controllers aqui
 
 begin
-  THorse.Use(
-    procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
-    begin
-      // Middlewares globais podem ser adicionados aqui
-      Next;
-    end
-  );
+  THorse.Use(CORS);
 
-  // Rota para receber o JSON via POST
-  THorse.Post('/receberjson',
-    procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
+ procedure GetJSON(Req: THorseRequest; Res: THorseResponse; Next: TProc)
     var
       JSONData: TJSONObject;
       NFse1, NFse2, NFse3: TNFse; // Suponha que você tenha uma classe TNFse para representar a NFse
@@ -44,13 +34,13 @@ begin
         JSONData.Free;
         ResultJSON.Free;
       end;
-    end
-  );
-
+    end;
+  
+  // Rota para receber o JSON via POST
+  THorse.Post('/receberjson', GetJSON);
+   
   // Registre as rotas de cada controller
-  RegisterRoutes1;
-  RegisterRoutes2;
-  RegisterRoutes3;
+  RegisterRoutes;
 
   THorse.Listen(9000);
 end.
