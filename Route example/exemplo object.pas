@@ -1,4 +1,4 @@
-unit NFseController1;
+unit nfse_controller;
 
 interface
 
@@ -7,8 +7,10 @@ uses
 
 procedure RegisterRoutes;
 
+procedure Route(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+
 function ToJSON: TJSONObject;
-s
+
 implementation
 
 function TNFse.ToJSON: TJSONObject;
@@ -19,20 +21,19 @@ begin
   // Adicione outros campos aqui
 end;
 
+procedure Route(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+begin
+  // Lógica para manipular a NFse1
+  Res.Send('NFse1 Controller');
+end
+
 procedure RegisterRoutes;
 begin
-  THorse.Get('/nfse1', 
-    procedure(Req: THorseRequest; Res: THorseResponse; Next: TProc)
-    begin
-      // Lógica para manipular a NFse1
-      Res.Send('NFse1 Controller');
-    end
-  );
+  THorse.Get('/nfse1', );
 end;
 
 initialization
-  RegisterRoutes;
-
-  
+ 
+RegisterRoutes;
 
 end.
