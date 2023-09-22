@@ -1,1 +1,6 @@
+PostgreSQL 9.6
 https://drive.google.com/file/d/1gOP_dkD8jlAUV8ffG0XWTPB9IDgwf7yT/view?usp=sharing
+
+
+PostgreSQL Manager
+https://www.sqlmanager.net/products/postgresql/manager
