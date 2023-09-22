@@ -6,4 +6,4 @@ PostgreSQL Manager
 https://www.sqlmanager.net/products/postgresql/manager
 
 ZeosExe
-https://drive.google.com/file/d/1WT2iYSdfAaQiEJ0vtNuRmjs2Yxt7KEZD/view?usp=drivesdk
+https://drive.google.com/file/d/10r5SRltJQSEZ3ZaItW7Dl7LKAkAWOtEx/view?usp=drivesdk
